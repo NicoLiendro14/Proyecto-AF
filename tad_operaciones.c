@@ -114,10 +114,6 @@ ptrSet genera_conjunto(int n){
 		str1=crea_str(cad1);
 		aux=crea_set(str1);
 		inserta_nodo(&estados,aux);
-		/*
-		gen1=(ptrData)aux;
-		inserta_nodo_generico(&cabGen,auxGen);
-		*/
 	}
 	return estados;
 }
@@ -183,26 +179,19 @@ void muestra(ptrSet lista){
 		printf("\n \n \t{");
 		while(lista!=NULL){
 			aux=getValor(lista);
-			printf("%s,",aux->dato);
+			printf("%s",aux->dato);
+			if(lista->sig!=NULL)
+				printf(",");
 			lista=lista->sig;
 		}
 		printf("}");
 	}
 }
 
-/*void muestra2(ptrData lista){
-	ptrStr aux=NULL;
-	if(lista!=NULL){
-		while(lista!=NULL){
-			
-		}
-	}
-}*/
+
 ptrStr getValor(ptrSet x){ //Obtiene el STRING que tiene SET
 	ptrStr aux;
 	aux=(ptrStr)x->dato;
 	return aux;
 }
-
-
 
